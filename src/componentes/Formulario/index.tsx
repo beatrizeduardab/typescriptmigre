@@ -1,0 +1,159 @@
+/*
+import React, { useState } from 'react';
+import CampoTexto from '../CampoTexto';
+import ListaSuspensa from '../ListaSuspensa';
+import Botao from '../Botao';
+import './Formulario.css';
+
+interface Colaborador {
+    nome: string;
+    cargo: string;
+    imagem: string;
+    time: string;
+}
+
+interface FormularioProps {
+    times: string[];
+    aoColaboradorCadastrado: (colaborador: Colaborador) => void;
+}
+
+const Formulario = ({ times, aoColaboradorCadastrado }: FormularioProps) => {
+    const [nome, setNome] = useState('');
+    const [cargo, setCargo] = useState('');
+    const [imagem, setImagem] = useState('');
+    const [time, setTime] = useState('');
+
+    const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
+        evento.preventDefault();
+        aoColaboradorCadastrado({
+            nome,
+            cargo,
+            imagem,
+            time,
+        });
+        setNome('');
+        setCargo('');
+        setImagem('');
+        setTime('');
+    };
+
+    return (
+        <section className="formulario">
+            <form onSubmit={aoSalvar}>
+                <h2>Preencha os dados para criar o card do colaborador</h2>
+                <CampoTexto
+                    obrigatorio={true}
+                    label="Nome"
+                    placeholder="Digite seu nome"
+                    valor={nome}
+                    aoAlterado={valor => setNome(valor)}
+                />
+                <CampoTexto
+                    obrigatorio={true}
+                    label="Cargo"
+                    placeholder="Digite seu cargo"
+                    valor={cargo}
+                    aoAlterado={valor => setCargo(valor)}
+                />
+                <CampoTexto
+                    label="Imagem"
+                    placeholder="Digite o endereço da imagem"
+                    valor={imagem}
+                    aoAlterado={valor => setImagem(valor)}
+                />
+                <ListaSuspensa
+                    obrigatorio={true}
+                    label="Time"
+                    itens={times}
+                    valor={time}
+                    aoAlterado={valor => setTime(valor)}
+                />
+                <Botao>
+                    Criar Card
+                </Botao>
+            </form>
+        </section>
+    );
+};
+
+export default Formulario; 
+*/
+
+import React, { useState } from 'react';
+import CampoTexto from '../CampoTexto';
+import ListaSuspensa from '../ListaSuspensa';
+import Botao from '../Botao';
+import './Formulario.css';
+
+interface Colaborador {
+    nome: string;
+    cargo: string;
+    imagem: string;
+    time: string;
+}
+
+interface FormularioProps {
+    times: string[];
+    aoColaboradorCadastrado: (colaborador: Colaborador) => void;
+}
+
+const Formulario = ({ times, aoColaboradorCadastrado }: FormularioProps) => {
+    const [nome, setNome] = useState('');
+    const [cargo, setCargo] = useState('');
+    const [imagem, setImagem] = useState('');
+    const [time, setTime] = useState('');
+
+    const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
+        evento.preventDefault();
+        aoColaboradorCadastrado({
+            nome,
+            cargo,
+            imagem,
+            time,
+        });
+        setNome('');
+        setCargo('');
+        setImagem('');
+        setTime('');
+    };
+
+    return (
+        <section className="formulario">
+            <form onSubmit={aoSalvar}>
+                <h2>Preencha os dados para criar o card do colaborador</h2>
+                <CampoTexto
+                    obrigatorio={true}
+                    label="Nome"
+                    placeholder="Digite seu nome"
+                    valor={nome}
+                    aoAlterado={valor => setNome(valor)}
+                />
+                <CampoTexto
+                    obrigatorio={true}
+                    label="Cargo"
+                    placeholder="Digite seu cargo"
+                    valor={cargo}
+                    aoAlterado={valor => setCargo(valor)}
+                />
+                <CampoTexto
+                    label="Imagem"
+                    placeholder="Digite o endereço da imagem"
+                    valor={imagem}
+                    aoAlterado={valor => setImagem(valor)}
+                />
+                <ListaSuspensa
+                    obrigatorio={true}
+                    label="Time"
+                    itens={times}
+                    valor={time}
+                    aoAlterado={valor => setTime(valor)}
+                />
+                <Botao>
+                    Criar Card
+                </Botao>
+            </form>
+        </section>
+    );
+};
+
+export default Formulario;
